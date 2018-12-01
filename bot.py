@@ -9,8 +9,8 @@ coloredlogs.install(level='DEBUG')
 
 # Load .env variables
 load_dotenv(verbose=True)
-token = os.getenv("TOKEN")
-
+token = os.getenv("TOKEN") if (os.getenv("TOKEN")) else 'TU TOKEN'
+logger.info('Este es el token: ' + token)
 
 def hello(bot, update):
     update.message.reply_text(
