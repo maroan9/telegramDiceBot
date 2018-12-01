@@ -1,0 +1,2 @@
+hello - Saludame
+roll - Lanza el numero de dados y caras especificadas /roll 1d6 (lanza un dado de 6 caras) /roll 4d20+4 lanza cuatro dados de veinte caras y suma 4 al resultado
