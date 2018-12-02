@@ -6,6 +6,7 @@ from pathlib import Path
 import coloredlogs
 from dotenv import load_dotenv
 from telegram.ext import CommandHandler, Updater
+from telegram import ParseMode
 
 from modules.dice import leerFormula
 
@@ -29,7 +30,10 @@ def hello(bot, update):
 def roll(bot, update, args):
     logger.warning(args)
     formula = args[0] if (len(args) != 0) else 'd6'
-    update.message.reply_text(leerFormula(formula))
+    update.message.reply_text(
+        text=leerFormula(formula),
+        parse_mode=ParseMode.HTML
+    )
 
 
 updater = Updater(token)

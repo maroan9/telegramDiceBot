@@ -14,8 +14,8 @@ def leerFormula(formula):
             temp = g.group(0)
             if 'd' in temp:
                 resDado = leerDado(temp)
-                f += resDado
-                result += temp + ' (' + resDado + ') '
+                f += resDado[1]
+                result += temp + resDado[0]
             else:
                 f += temp
                 result += temp
@@ -32,6 +32,7 @@ def leerFormula(formula):
 
 def leerDado(dado):
     dadoSp = dado.split("d")
+    texto = ""
     if dadoSp[0] == '':
         cantidad = 1
     else:
@@ -39,6 +40,8 @@ def leerDado(dado):
     caras = dadoSp[1]
     resultado = 0
     for i in range(int(cantidad)):
-        resultado += randrange(int(caras)) + 1
+        tirada = randrange(int(caras)) + 1
+        texto += " (<b>" + str(tirada) + "</b>)"
+        resultado += tirada
 
-    return str(resultado)
+    return [texto, str(resultado)]
