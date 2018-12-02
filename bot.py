@@ -7,7 +7,7 @@ import coloredlogs
 from dotenv import load_dotenv
 from telegram.ext import CommandHandler, Updater
 
-from modules.dice import leerDado
+from modules.dice import leerFormula
 
 logger = logging.getLogger(__name__)
 coloredlogs.install(level='DEBUG')
@@ -28,8 +28,8 @@ def hello(bot, update):
 
 def roll(bot, update, args):
     logger.warning(args)
-    dado = args[0] if (len(args)!=0) else 'd6'
-    update.message.reply_text(dado)
+    formula = args[0] if (len(args) != 0) else 'd6'
+    update.message.reply_text(leerFormula(formula))
 
 
 updater = Updater(token)
