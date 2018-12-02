@@ -45,3 +45,4 @@ def leerDado(dado):
         resultado += tirada
 
     return [texto, str(resultado)]
+# https://pdfcrowd.com/doc/api/html-to-image/python/
