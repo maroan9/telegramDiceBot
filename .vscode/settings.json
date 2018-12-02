@@ -1,6 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": "/home/mario/Environments/telegram/bin/python",
+    "python.pythonPath": "/home/mario/Environments/botEnv/bin/python",
     "python.linting.banditEnabled": false
 }

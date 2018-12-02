@@ -5,8 +5,8 @@ from pathlib import Path
 # Logs for debug
 import coloredlogs
 from dotenv import load_dotenv
-from telegram.ext import CommandHandler, Updater
 from telegram import ParseMode
+from telegram.ext import CommandHandler, Updater
 
 from modules.dice import leerFormula
 
