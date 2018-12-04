@@ -32,7 +32,7 @@ def leerFormula(formula):
 
 def leerDado(dado):
     dadoSp = dado.split("d")
-    texto = ""
+    texto = "("
     if dadoSp[0] == '':
         cantidad = 1
     else:
@@ -41,7 +41,9 @@ def leerDado(dado):
     resultado = 0
     for i in range(int(cantidad)):
         tirada = randrange(int(caras)) + 1
-        texto += " (<b>" + str(tirada) + "</b>)"
+        texto += " <b>" + str(tirada) + "</b> "
+        if i < (int(cantidad) - 1):
+            texto += "+"
         resultado += tirada
-
+    texto += ")"
     return [texto, str(resultado)]
