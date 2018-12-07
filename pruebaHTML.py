@@ -2,7 +2,6 @@ import imgkit
 
 f = open('prueba.html', 'w')
 
-css = 'assets/dice.css'
 options = {
     'format': 'svg',
     'crop-w': '320'

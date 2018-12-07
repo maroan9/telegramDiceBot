@@ -1,21 +1,24 @@
-# import logging
+import logging
 import re
 from random import randrange
 
-# logger = logging.getLogger(__name__)
+from modules.utils import createimage
+
+logger = logging.getLogger(__name__)
 # (\d+(?!d))|([\+\-\*\/])|(\d*d\d+)
 
 
 def leerFormula(formula):
     if bool(re.match('^[1-9d]', formula)):
-        result = ''
+        result = '<body style="background-color: #181818;"><p style="width:310; color:bisque; background-image: url(' \
+                 'assets/fondo.jpg);"> '
         f = ''
         for g in re.finditer('([\+\-\*\/\(\)])|(\d*d\d+)|(\d+(?!d))', formula):
             temp = g.group(0)
             if 'd' in temp:
                 resDado = leerDado(temp)
                 f += resDado[1]
-                result += temp + resDado[0]
+                result += resDado[0]
             else:
                 f += temp
                 result += temp
@@ -24,26 +27,43 @@ def leerFormula(formula):
         except:
             return 'El formato de la formula no es el correcta'
 
-        result += '=' + str(total)
-        return result
+        result += '</p></body>'
+        createimage(result)
+
+        return total
     else:
         return 'El formato de la formula no es el correcta'
 
 
+# <img style="width:50px; height:50px; vertical-align: middle;" src="assets/d8_1.svg">
 def leerDado(dado):
+    svgList = ['4', '6', '8', '10', '12', '20']
     dadoSp = dado.split("d")
-    texto = "("
+    texto = ""
     if dadoSp[0] == '':
         cantidad = 1
     else:
         cantidad = dadoSp[0]
     caras = dadoSp[1]
     resultado = 0
-    for i in range(int(cantidad)):
-        tirada = randrange(int(caras)) + 1
-        texto += " <b>" + str(tirada) + "</b> "
-        if i < (int(cantidad) - 1):
-            texto += "+"
-        resultado += tirada
-    texto += ")"
+
+    if caras in svgList:
+        logger.warning("SVG")
+        for i in range(int(cantidad)):
+            tirada = randrange(int(caras)) + 1
+            texto += ' <img style="width:50px; height:50px; vertical-align: middle;" src="assets/d' \
+                     + caras + '_' + str(tirada) + '.svg"> '
+            if i < (int(cantidad) - 1):
+                texto += "+"
+            resultado += tirada
+    else:
+        logger.warning("NOSVG")
+        texto += dado + '('
+        for i in range(int(cantidad)):
+            tirada = randrange(int(caras)) + 1
+            texto += " <b>" + str(tirada) + "</b> "
+            if i < (int(cantidad) - 1):
+                texto += "+"
+            resultado += tirada
+            texto += ")"
     return [texto, str(resultado)]

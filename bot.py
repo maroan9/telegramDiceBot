@@ -30,8 +30,10 @@ def hello(bot, update):
 def roll(bot, update, args):
     logger.warning(args)
     formula = args[0] if (len(args) != 0) else 'd6'
+    tirar_dados = leerFormula(formula)
+    bot.send_photo(chat_id=update.message.chat_id, photo=open('out.jpg', 'rb'))
     update.message.reply_text(
-        text=leerFormula(formula),
+        text=tirar_dados,
         parse_mode=ParseMode.HTML
     )
 

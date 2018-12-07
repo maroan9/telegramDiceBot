@@ -3,5 +3,5 @@
           fill="#f55" stroke="#720808" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.1"
           style="paint-order:markers fill stroke"/>
     <text x="130.9375" y="327.02438" fill="#48373e" font-family="sans-serif" font-size="85.333px" letter-spacing="0px"
-          opacity=".98" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="130.9375" y="327.02438" fill="#48373e" font-size="192px">13</tspan></text>
+          opacity=".98" word-spacing="0px" style="line-height:1.25" xml:space="preserve"><tspan x="130.9375" y="327.02438" fill="#fff" font-size="192px">13</tspan></text>
 </svg>
