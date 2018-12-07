@@ -10,7 +10,7 @@ options = {
 
 mensaje="""<html>
 <head></head>
-<body style="background-color: black"><p style="width:310; color:white;">Hola mundo!<img style="width:50px; height:50px; vertical-align: middle;" src="assets/d8_1.svg"> + <img style="width:50px; height:50px; vertical-align: middle;" src="assets/d8_5.svg"> + 5 + 6 + 7 + 8 + 9 = 100</p></body>
+<body style="background-color: #181818;"><p style="width:310; color:bisque; background-image: url(assets/fondo.jpg);">Hola mundo!<img style="width:50px; height:50px; vertical-align: middle;" src="assets/d8_1.svg"> + <img style="width:50px; height:50px; vertical-align: middle;" src="assets/d8_5.svg"> + 5 + 6 + 7 + 8 + 9 = 100</p></body>
 </html>"""
 
 f.write(mensaje)
