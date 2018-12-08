@@ -5,13 +5,15 @@ from random import randrange
 from modules.utils import createimage
 
 logger = logging.getLogger(__name__)
+
+
 # (\d+(?!d))|([\+\-\*\/])|(\d*d\d+)
 
 
 def leerFormula(formula):
     if bool(re.match('^[1-9d]', formula)):
-        result = '<body style="background-color: #181818;"><p style="width:310; color:bisque; background-image: url(' \
-                 'assets/fondo.jpg);"> '
+        result = '<body style="background-color: #181818; text-align: center;"><p style="width:310; color:bisque; ' \
+                 'background-image: url(assets/fondo.jpg);"> '
         f = ''
         for g in re.finditer('([\+\-\*\/\(\)])|(\d*d\d+)|(\d+(?!d))', formula):
             temp = g.group(0)
