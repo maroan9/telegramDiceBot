@@ -52,7 +52,7 @@ def leerDado(dado):
         for i in range(int(cantidad)):
             tirada = randrange(int(caras)) + 1
             texto += ' <img style="width:50px; height:50px; vertical-align: middle;" src="assets/d' \
-                     + caras + '_' + str(tirada) + '.svg"> '
+                     + caras + '_' + str(tirada) + '.png"> '
             if i < (int(cantidad) - 1):
                 texto += "+"
             resultado += tirada
